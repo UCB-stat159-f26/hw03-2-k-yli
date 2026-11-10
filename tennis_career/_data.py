@@ -1,8 +1,6 @@
 import json
 import re
-
 import pandas as pd
-
 
 MATCH_FIELDS = {
     "match_date": 0,
