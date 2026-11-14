@@ -22,18 +22,23 @@ python -m pip install "git+https://github.com/UCB-stat159-f26/hw03-2-k-yli.git"
 
 ## Usage
 
+This example downloads Rafael Nadal's career match data and plots it. Downloading the data requires an internet connection.
+
 ```python
 import matplotlib.pyplot as plt
 from tennis_career import get_career_matches, plot_career_matches
 
-matches = get_career_matches("Serena Williams")
+matches = get_career_matches("Rafael Nadal")
 print(matches.head())
 
 ax = plot_career_matches(matches)
+ax.set_title("Rafael Nadal’s Career Matches")
 plt.show()
 ```
 
-`get_career_matches()` takes a player's name and returns a pandas DataFrame. It needs an internet connection to retrieve the data. To try another player, replace `"Serena Williams"` with `"Rafael Nadal"`. `plot_career_matches()` takes the resulting DataFrame and returns a Matplotlib axes object.
+![Scatter plot of Rafael Nadal's age and the age difference with his opponents, with wins in blue and losses in purple.](examples/nadal_career.png)
+
+To try another player, replace `"Rafael Nadal"` with the other player's name and update the plot title.
 
 ## Tests
 
