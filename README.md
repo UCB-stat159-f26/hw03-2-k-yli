@@ -46,3 +46,9 @@ python -m pytest -q
 
 The tests use saved sample JS files and run without contacting Tennis Abstract. They check how the package handles opponent birth dates in WTA data, numeric opponent ages in ATP data, and a file that is missing its match array.
 
+## Reflection
+
+In HW2, I only needed my scripts to make one plot for Serena Williams. When I turned them into a package, I started thinking about what someone else might want to do with the code. For example, they might want to look at the match data before making a plot. I separated the functions so someone could download and clean the data, look through the DataFrame, and then decide whether to plot it. I also learned what `pyproject.toml` does: it tells `pip` how to install the package and which libraries it needs.
+
+One detail I hadn't considered in HW2 was that Tennis Abstract stores opponents' ages differently for the WTA and ATP. For Serena Williams, I had to calculate the opponent's age from their birth date and the match date. For Rafael Nadal, the file already gave me the opponent's age. Once both were in years, I could use the same plotting function. I used small local JavaScript files to check both cases, including the age difference in the first match in my Serena test file. That meant I could run the tests again after a change without downloading the data every time. I used live requests separately to check that the download and plot worked together.
+
